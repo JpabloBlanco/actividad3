@@ -29,22 +29,34 @@ public class ControladorInicio {
         
         Usuario u1 = new Usuario();
         u1.setCedula("1234 ");
-        u1.setClave("Abcd");
-        u1.setNombre("Juan Pablo Blanco");
+        u1.setPassword("Abcd");
+        u1.setNombre("Juan Pablo");
+        u1.setApellidos("Blanco VasquesZ");
+        u1.setRol("admin");
         u1.setEmail("Juanp@gmail.com");
+        u1.setTelefono("777");
+        u1.setEstado("activo");
         modelo.addAttribute("alguien", u1);
         
         Usuario u2 = new Usuario();
         u2.setCedula("5678 ");
-        u2.setClave("Efgh");
-        u2.setNombre("Cesar manuel blanco");
+        u2.setPassword("Efgh");
+        u2.setNombre("Cesar manuel");
+        u2.setApellidos("Blanco Vasquez");
+        u2.setRol("user");
         u2.setEmail("CesarM@gmail.com");
+        u2.setTelefono("3131");
+        u2.setEstado("activo");
         
         Usuario u3 = new Usuario();
         u3.setCedula("0000");
-        u3.setClave("none");
-        u3.setNombre("No bo dy");
+        u3.setPassword("none");
+        u3.setNombre("No bo");
+        u3.setApellidos("dy");
+        u3.setRol("user");
         u3.setEmail("nothing@gmail.com");
+        u3.setTelefono("00000");
+        u3.setEstado("activo");
         
         List <Usuario> listasUsuarios = Arrays.asList(u2,u3);
         modelo.addAttribute("usuarios",listasUsuarios );

@@ -11,9 +11,13 @@ import lombok.Data;
 public class Usuario {
     
     private String cedula;
-    private String clave;
+    private String password;
     private String nombre;
+    private String apellidos;
+    private String rol;
     private String email;
+    private String telefono;
+    private String estado;
     
     
 }
