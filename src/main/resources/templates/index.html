@@ -7,50 +7,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <h2>Pagina de inicio</h2>
-        <p th:text="${mensaje}"></p>
-        <p th:text="${dato}"></p>
+        <h2>PAGINA DE INICIO</h2>
+        <h4>LISTAS DE PERSONAS</h4>
         <hr>
-        <b>Cedula:</b><span th:text="${alguien.cedula}"></span><br>
-        <b>Password:</b><span th:text="${alguien.password}"></span><br>
-        <b>Nombre:</b><span th:text="${alguien.nombre}"></span><br>
-        <b>Apellidos:</b><span th:text="${alguien.apellidos}"></span><br>
-        <b>Rol:</b><span th:text="${alguien.rol}"></span><br>
-        <b>Email:</b><span th:text="${alguien.email}"></span><br>
-        <b>Telefono:</b><span th:text="${alguien.telefono}"></span><br>
-        <b>Estado:</b><span th:text="${alguien.estado}"></span><br>
-        <hr>
-        <h4>LISTA DE PERSONAS</h4>
-        <hr>
-        <div th:if="${usuarios !=null and !usuarios.empty}">
-            
+        <div th:if ="${usuarios !=null and !usuarios.empty}">
             <table border="1">
                 <tr>
                     <th>CEDULA</th>
                     <th>PASSWORD</th>
-                    <th>NOMBRE</th>
-                    <th>APELLIDOS</th>
-                    <th>ROL</th>
-                    <th>EMAIL</th>
-                    <th>TELEFONO</th>
-                    <th>ESTADO</th>
+                    <th>apellidos</th>
+                    <th>rol</th>
+                    <th>email</th>
+                    <th>telefono</th>
+                    <th>estado</th>
+                    <th>fecha de registro</th>
                     
                 </tr>
-                <tr th:each="u: ${usuarios}">
+                <tr th:each ="u:${usuarios}">
                     <td th:text="${u.cedula}"></td>
-                    <td th:text="${u.password}"></td>
-                    <td th:text="${u.nombre}"></td>
+                    <td th:text="${u.password}"></td> 
                     <td th:text="${u.apellidos}"></td>
                     <td th:text="${u.rol}"></td>
                     <td th:text="${u.email}"></td>
-                    <td th:text="${u.telefono}"></td>
-                    <td th:text="${u.estado}"></td>
-                    
-                </tr>
+                    <td th:text ="${u.telefono}"></td>
+                    <td th:text ="${u.estado}"></td>
+                    <td th:text ="${u.fecha_registro}"></td>
+                </tr>              
             </table>
         </div>
-        <div th:if="${usuarios ==null or usuarios.empty}">
-          La lista de Usuarios esta Vacia  
+        <div th:if="${usuarios == null or usuarios.empty}">
+            La lista de Usuario esta Vacia
         </div>
     </body>
 </html>
