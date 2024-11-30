@@ -1,8 +1,9 @@
 
 package com.example.corte3.controladores;
 
-import com.example.corte3.dao.IUsuarioCrud;
+
 import com.example.corte3.modelo.Usuario;
+import com.example.corte3.servicio.IUsuarioServicio;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;   
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +22,12 @@ import org.springframework.ui.Model;
 public class ControladorInicio {
     
     @Autowired
-    IUsuarioCrud crudUsuario;
+    IUsuarioServicio userServicio;
     @GetMapping("/")
     public String inicio(Model modelo){
         
         
-        List<Usuario> listaUsuario = (List<Usuario>) crudUsuario.findAll();
+        List<Usuario> listaUsuario = (List<Usuario>) userServicio.listarUsuarios();
         modelo.addAttribute("usuarios", listaUsuario);
         log.info("olvidalaaaaaaaaaaaaaa");
         return "index";
