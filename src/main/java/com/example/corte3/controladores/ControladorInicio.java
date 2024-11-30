@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 
 
 /**
@@ -32,5 +33,17 @@ public class ControladorInicio {
         log.info("olvidalaaaaaaaaaaaaaa");
         return "index";
     }
+    
+    @GetMapping("/agregar")
+    public String agregar (Usuario usuario){
+        return "modificar";
+    }
+    
+    @PostMapping("/guardar")
+    public String guardar (Usuario usuario){
+        userServicio.guardar(usuario);
+        return "redirect:/";
+    }
+    
     
 }
