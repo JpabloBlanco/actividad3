@@ -1,7 +1,6 @@
-
 package com.example.corte3.controladores;
 
-
+import com.blade.validator.annotation.Valid;
 import com.example.corte3.modelo.Usuario;
 import com.example.corte3.servicio.IUsuarioServicio;
 import java.util.List;
@@ -10,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.PostMapping;
 
 
@@ -41,7 +41,10 @@ public class ControladorInicio {
     }
     
     @PostMapping("/guardar")
-    public String guardar (Usuario usuario){
+    public String guardar (@Valid Usuario usuario, Errors errores){
+        if (errores.hasErrors()){
+            return "modificar";
+        }
         userServicio.guardar(usuario);
         return "redirect:/";
     }
@@ -60,10 +63,5 @@ public class ControladorInicio {
         userServicio.eliminar(usuario);
         return "redirect:/";
     }
-    
-    
-    
-    
-    
     
 }

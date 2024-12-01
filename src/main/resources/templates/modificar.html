@@ -16,30 +16,39 @@
             <br/>
             <label for ="id">ID</label>
             <input type="text" name="id" th:field="*{id}" required/>
+            <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}">id es requerida</span>
             <br/>
             <label for ="cedula">Cedula</label>
             <input type="text" name="cedula" th:field="*{cedula}" required/>
+            <span th:if="${#fields.hasErrors('cedula')}" th:errors="*{cedula}">id es requerida</span>
             <br/>
             <label for ="password">Clave</label>
             <input type="text" name="password" th:field="*{password}"/>
+            <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">id es requerida</span>
             <br/>
             <label for ="nombre">Nombre</label>
             <input type="text" name="nombre" th:field="*{nombre}" required/>
+            <span th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}">id es requerida</span>
             <br/>
             <label for ="apellidos">apellidos</label>
             <input type="text" name="apellidos" th:field="*{apellidos}" required/>
+            <span th:if="${#fields.hasErrors('apellidos')}" th:errors="*{apellidos}">id es requerida</span>
             <br/>
             <label for ="rol">rol</label>
             <input type="text" name="rol" th:field="*{rol}" required/>
+            <span th:if="${#fields.hasErrors('rol')}" th:errors="*{rol}">id es requerida</span>
             <br/>
             <label for ="email">Email</label>
             <input type="email" name="email" th:field="*{email}"/>
+            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">id es requerida</span>
             <br/>
             <label for ="telefono">telefono</label>
             <input type="text" name="telefono" th:field="*{telefono}" required/>
+            <span th:if="${#fields.hasErrors('telefono')}" th:errors="*{telefono}">id es requerida</span>
             <br/>
             <label for ="estado">estado </label>
             <input type="text" name="estado" th:field="*{estado}" required/>
+            <span th:if="${#fields.hasErrors('estado')}" th:errors="*{estado}">id es requerida</span>
             <br/>
             
             <input type="reset" value="Limpiar"/> &nbsp;&nbsp;&nbsp;

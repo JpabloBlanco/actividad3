@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html xmlns: th="http://www.thymeleaf.org">
-    <head>
+    <head th:replace="plantillas/partes :: cabecero">
         <title>Crudl mvc con Spring Boot </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -43,6 +43,7 @@
         </div>
         <div th:if="${usuarios == null or usuarios.empty}">
             La lista de Usuario esta Vacia
-        </div>
+        </div> <br/><hr>
+        <footer th:replace="plantillas/partes :: pie"></footer>
     </body>
 </html>
