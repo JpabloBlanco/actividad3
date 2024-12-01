@@ -55,6 +55,14 @@ public class ControladorInicio {
         return "modificar";
     }
     
+    @GetMapping("/eliminar/{id}")
+    public String eliminar (Usuario usuario, Model modelo){
+        userServicio.eliminar(usuario);
+        return "redirect:/";
+    }
+    
+    
+    
     
     
     

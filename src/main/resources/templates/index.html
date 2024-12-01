@@ -37,6 +37,7 @@
                     <td th:text ="${u.estado}"></td>
                     <td th:text ="${u.fecha_registro}"></td>
                     <td> <a th:href ="@{/editar/}+${u.id}" th:text="EDITAR"></a> </td>
+                    <td> <a th:href ="@{/eliminar/}+${u.id}" th:text="ELIMINAR"></a> </td>
                 </tr>              
             </table>
         </div>
