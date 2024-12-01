@@ -16,23 +16,27 @@
                 <tr>
                     <th>CEDULA</th>
                     <th>PASSWORD</th>
+                    <th>NOMBRE</th>
                     <th>apellidos</th>
                     <th>rol</th>
                     <th>email</th>
                     <th>telefono</th>
                     <th>estado</th>
                     <th>fecha de registro</th>
+                    <th>Editar</th>
                     
                 </tr>
                 <tr th:each ="u:${usuarios}">
                     <td th:text="${u.cedula}"></td>
                     <td th:text="${u.password}"></td> 
+                    <td th:text="${u.nombre}"></td> 
                     <td th:text="${u.apellidos}"></td>
                     <td th:text="${u.rol}"></td>
                     <td th:text="${u.email}"></td>
                     <td th:text ="${u.telefono}"></td>
                     <td th:text ="${u.estado}"></td>
                     <td th:text ="${u.fecha_registro}"></td>
+                    <td> <a th:href ="@{/editar/}+${u.id}" th:text="EDITAR"></a> </td>
                 </tr>              
             </table>
         </div>

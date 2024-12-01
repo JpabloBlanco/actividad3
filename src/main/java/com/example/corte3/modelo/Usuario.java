@@ -24,7 +24,7 @@ public class Usuario implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     private int id;
-    private String cedula;
+    private Integer cedula;
     private String password;
     private String nombre;
     private String apellidos;

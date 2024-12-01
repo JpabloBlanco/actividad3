@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns="http://www.w3.org/1999/xhtml">
@@ -14,11 +14,14 @@
         <form th:action="@{/guardar}" method="POST" th:object="${usuario}">
             
             <br/>
+            <label for ="id">ID</label>
+            <input type="text" name="id" th:field="*{id}" required/>
+            <br/>
             <label for ="cedula">Cedula</label>
             <input type="text" name="cedula" th:field="*{cedula}" required/>
             <br/>
             <label for ="password">Clave</label>
-            <input type="text" name="password" th:field="*{password}" required/>
+            <input type="text" name="password" th:field="*{password}"/>
             <br/>
             <label for ="nombre">Nombre</label>
             <input type="text" name="nombre" th:field="*{nombre}" required/>
@@ -30,7 +33,7 @@
             <input type="text" name="rol" th:field="*{rol}" required/>
             <br/>
             <label for ="email">Email</label>
-            <input type="email" name="email" th:field="*{email}" required/>
+            <input type="email" name="email" th:field="*{email}"/>
             <br/>
             <label for ="telefono">telefono</label>
             <input type="text" name="telefono" th:field="*{telefono}" required/>
